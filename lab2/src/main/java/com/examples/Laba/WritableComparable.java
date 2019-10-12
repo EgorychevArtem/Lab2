@@ -25,7 +25,7 @@ public class WritableComparable {
         }
     }
 
-    public void PrintResult(){
+    public String PrintResult(){
         String str = "AiroportID: " + AiroportID + "flag: " + flag;
         return str;
     }
