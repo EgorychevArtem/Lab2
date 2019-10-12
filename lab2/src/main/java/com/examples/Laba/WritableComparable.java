@@ -20,8 +20,8 @@ public class WritableComparable {
         WritableComparable second;
         if (this.AiroportID > second.AiroportID){
             return 1;
-        } else if (){
-
+        } else {
+            return 0;
         }
     }
 }
