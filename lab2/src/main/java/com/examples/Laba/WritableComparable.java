@@ -15,4 +15,13 @@ public class WritableComparable {
         AiroportID = d.readInt();
         flag = d.readInt();
     }
+
+    public void compareAiroport(int AiroportID){
+        WritableComparable second;
+        if (this.AiroportID > second.AiroportID){
+            return 1;
+        } else if (){
+
+        }
+    }
 }
