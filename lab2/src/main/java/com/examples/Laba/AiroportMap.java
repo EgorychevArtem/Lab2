@@ -2,6 +2,11 @@ package com.examples.Laba;
 import org.apache.hadoop.io.LongWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Mapper;
-public class AiroportMap extends Mapper <LongWritable, Text,WritableComparable, Text>{
 
-}
+import java.io.IOException;
+
+public class AiroportMap extends Mapper <LongWritable, Text,WritableComparable, Text>{
+    @Override
+    protected void map(LongWritable key,Text value,Context context) throws IOException, InterruptedException {
+
+    }
