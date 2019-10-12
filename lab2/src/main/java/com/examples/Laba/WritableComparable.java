@@ -1,10 +1,18 @@
 package com.examples.Laba;
 
+import java.io.DataInput;
+import java.io.IOException;
+
 public class WritableComparable {
     int AiroportID, flag;
 
+    public WritableComparable(int AiroportID, int flag){
+        this.AiroportID = AiroportID;
+        this.flag = flag;
+    }
 
-    public static void main(String[] args){
-
+    public void read(DataInput d) throws IOException {
+        AiroportID = d.readInt();
+        flag = d.readInt();
     }
 }
