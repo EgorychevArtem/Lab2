@@ -8,7 +8,7 @@ import java.io.IOException;
 
 public class FlightMap {
 
-    public class AiroportMap extends Mapper<LongWritable, Text,WritableComparable, Text> {
+    public class FlightMap extends Mapper<LongWritable, Text,WritableComparable, Text> {
         @Override
         protected void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
 
