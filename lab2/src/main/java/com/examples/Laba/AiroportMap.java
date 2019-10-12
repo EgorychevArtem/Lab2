@@ -1,5 +1,5 @@
 package com.examples.Laba;
-
-public class AiroportMap {
+import org.apache.hadoop.mapreduce.Mapper;
+public class AiroportMap extends Mapper {
 
 }
