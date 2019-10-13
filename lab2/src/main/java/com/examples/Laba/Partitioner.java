@@ -1,9 +1,10 @@
 package com.examples.Laba;
 
-public class Partitioner {
-    public void Partitioner() {
-        Partitioner(, );
-    }
+import org.apache.hadoop.io.Text;
 
-    public void Partitioner(WritableComparable key, Text value,)
+public class Partitioner {
+
+    public int Partitioner(WritableComparable key, Text value, int NumberTask){
+        return key.AiroportID % NumberTask;
+    }
 }
