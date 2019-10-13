@@ -9,10 +9,10 @@ public class AiroportMap extends Mapper <LongWritable, Text,WritableComparable, 
     @Override
     protected void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
         String str[] = value.toString().split("\", ");
-        Text Airoport_title = new Text(str[0].replaceAll("\"", ""));
+        Text AiroportTitle = new Text(str[0].replaceAll("\"", ""));
         int AiroportID = Integer.parseInt(str[0].replaceAll("\"", ""));
 
         WritableComparable Key = new WritableComparable(AiroportID, 0);
-        context.write(Key,Airoport_title);
+        context.write(Key,AiroportTitle);
     }
 }
