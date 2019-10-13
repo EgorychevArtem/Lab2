@@ -19,7 +19,7 @@
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>Lab2</artifactId>
+                <artifactId>lab2</artifactId>
                 <configuration>
                     <source>1.8</source>
                     <target>1.8</target>
