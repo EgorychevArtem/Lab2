@@ -22,6 +22,8 @@ public class Reduce extends Reducer<Text, IntWritable,Text, LongWritable> {
             }
             sum += current;
         }
-        Text Min, Max,
+        Text Min, Max, Sum;
+        Text MIn = new Text("min: " + Float.toString(min));
+        
     }
 }
