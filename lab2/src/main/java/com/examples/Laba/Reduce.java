@@ -22,7 +22,6 @@ public class Reduce extends Reducer<Text, Text,Text, Text> {
             }
             sum += current;
         }
-        //Text Min, Max, Sum;
         Text Result = new Text("min: " + Float.toString(min) + "max: " + Float.toString(max) + "sum: " + Float.toString(sum));
         context.write(AiroportTitle, Result);
     }
