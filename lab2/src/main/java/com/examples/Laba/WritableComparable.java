@@ -11,7 +11,7 @@ public class WritableComparable {
         this.flag = flag;
     }
 
-    public WritableComparable(Class<WritableComparable> writableComparableClass, boolean b) {
+    public WritableComparable() {
     }
 
     public void read(DataInput d) throws IOException {
