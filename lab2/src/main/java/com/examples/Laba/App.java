@@ -10,13 +10,13 @@ import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 import java.io.IOException;
 
 public class App {
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException, ClassNotFoundException, InterruptedException {
         if (args.length != 3) {
             System.err.println("Usage: SortApp <input path flight> <input path airport> <output path>");
             System.exit(-1);
 
             Job job = Job.getInstance();
-            job.setJarByClass(JoinJob.class);
+            job.setJarByClass(App.class);
             job.setJobName("JoinJob sort");
             MultipleInputs.addInputPath(job, new Path(args[0]), TextInputFormat.class, CallsJoinMapper.class);
             MultipleInputs.addInputPath(job, new Path(args[1]), TextInputFormat.class, SystemsJoinMapper.class);
