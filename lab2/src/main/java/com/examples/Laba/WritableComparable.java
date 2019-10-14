@@ -11,6 +11,9 @@ public class WritableComparable {
         this.flag = flag;
     }
 
+    public WritableComparable(Class<WritableComparable> writableComparableClass, boolean b) {
+    }
+
     public void read(DataInput d) throws IOException {
         AiroportID = d.readInt();
         flag = d.readInt();
