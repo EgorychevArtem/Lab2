@@ -1,5 +1,6 @@
 package com.examples.Laba;
 
+import org.apache.hadoop.io.RawComparator;
 import org.apache.hadoop.mapreduce.Job;
 import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.io.Text;
@@ -23,7 +24,7 @@ public class App {
             FileOutputFormat.setOutputPath(job, new Path(args[2]));
 
             job.setPartitionerClass(Partitioner.class);
-            job.setGroupingComparatorClass(.class);
+            job.setGroupingComparatorClass((Class<? extends RawComparator>) Comparator.class);
             job.setReducerClass(Reduce.class);
 
             job.setMapOutputKeyClass(TextPair.class);
