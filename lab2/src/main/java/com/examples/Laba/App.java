@@ -18,12 +18,14 @@ public class App {
             Job job = Job.getInstance();
             job.setJarByClass(App.class);
             job.setJobName("JoinJob sort");
-            MultipleInputs.addInputPath(job, new Path(args[0]), TextInputFormat.class, CallsJoinMapper.class);
-            MultipleInputs.addInputPath(job, new Path(args[1]), TextInputFormat.class, SystemsJoinMapper.class);
+            MultipleInputs.addInputPath(job, new Path(args[0]), TextInputFormat.class, FlightMap.class);
+            MultipleInputs.addInputPath(job, new Path(args[1]), TextInputFormat.class, AiroportMap.class);
             FileOutputFormat.setOutputPath(job, new Path(args[2]));
-            job.setPartitionerClass(TextPair.FirstPartitioner.class);
-            job.setGroupingComparatorClass(TextPair.FirstComparator.class);
-            job.setReducerClass(JoinReducer.class);
+
+            job.setPartitionerClass(Partitioner.class);
+            job.setGroupingComparatorClass(.class);
+            job.setReducerClass(Reduce.class);
+
             job.setMapOutputKeyClass(TextPair.class);
             job.setOutputKeyClass(Text.class);
             job.setOutputValueClass(Text.class);
