@@ -23,13 +23,14 @@ public class App {
             MultipleInputs.addInputPath(job, new Path(args[1]), TextInputFormat.class, AiroportMap.class);
             FileOutputFormat.setOutputPath(job, new Path(args[2]));
 
+            job.setReducerClass(Reduce.class);
             job.setPartitionerClass(Partitioner.class);
             job.setGroupingComparatorClass((Class<? extends RawComparator>) Comparator.class);
-            job.setReducerClass(Reduce.class);
 
-            job.setMapOutputKeyClass(TextPair.class);
+            job.setMapOutputKeyClass(WritableComparable.class);
             job.setOutputKeyClass(Text.class);
             job.setOutputValueClass(Text.class);
+            
             job.setNumReduceTasks(2);
             System.exit(job.waitForCompletion(true) ? 0 : 1);
         }
