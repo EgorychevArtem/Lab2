@@ -1,2 +1,7 @@
+com/examples/Laba/FlightMap.class
+com/examples/Laba/App.class
+com/examples/Laba/Partition.class
 com/examples/Laba/WritableComparable.class
+com/examples/Laba/Comparator.class
+com/examples/Laba/Reduce.class
 com/examples/Laba/AiroportMap.class
