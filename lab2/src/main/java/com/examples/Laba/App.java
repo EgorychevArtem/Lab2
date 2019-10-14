@@ -1,9 +1,16 @@
 package com.examples.Laba;
 
 import org.apache.hadoop.mapreduce.Job;
+import org.apache.hadoop.fs.Path;
+import org.apache.hadoop.io.Text;
+import org.apache.hadoop.mapreduce.lib.input.MultipleInputs;
+import org.apache.hadoop.mapreduce.lib.input.TextInputFormat;
+import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
+
+import java.io.IOException;
 
 public class App {
-    public static void main(String[] args){
+    public static void main(String[] args) throws IOException {
         if (args.length != 3) {
             System.err.println("Usage: SortApp <input path flight> <input path airport> <output path>");
             System.exit(-1);
