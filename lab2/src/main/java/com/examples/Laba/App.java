@@ -25,7 +25,7 @@ public class App {
 
             job.setReducerClass(Reduce.class);
             job.setPartitionerClass(Partition.class);
-            job.setGroupingComparatorClass((Class<? extends RawComparator>) Comparator.class);
+            job.setGroupingComparatorClass(Comparator.class);
 
             job.setMapOutputKeyClass(WritableComparable.class);
             job.setMapOutputValueClass(Text.class);
