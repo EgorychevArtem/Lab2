@@ -24,7 +24,7 @@ public class App {
             FileOutputFormat.setOutputPath(job, new Path(args[2]));
 
             job.setReducerClass(Reduce.class);
-            job.setPartitionerClass(Partitioner.class);
+            job.setPartitionerClass(Partition.class);
             job.setGroupingComparatorClass((Class<? extends RawComparator>) Comparator.class);
 
             job.setMapOutputKeyClass(WritableComparable.class);
