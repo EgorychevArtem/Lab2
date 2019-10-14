@@ -5,7 +5,7 @@ public class App {
         if (args.length != 3) {
             System.err.println("Usage: SortApp <input path flight> <input path airport> <output path>");
             System.exit(-1);
-
+            
         }
     }
 }
