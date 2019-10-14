@@ -1,6 +1,8 @@
 package com.examples.Laba;
 
-public class Comparator extends WritableComparable{
+import org.apache.hadoop.io.WritableComparator;
+
+public class Comparator extends WritableComparator {
     protected Comparator(){
         super(WritableComparable.class, true);
     }
