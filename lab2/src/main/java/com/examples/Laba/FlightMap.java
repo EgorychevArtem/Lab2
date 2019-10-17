@@ -8,10 +8,16 @@ import java.io.IOException;
 
 
 public class FlightMap extends Mapper<LongWritable, Text, WritableComparabl, Text> {
+
+    public static float getFloat(String str){
+        if (str != "") return Float.parseFloat(str);
+        else return 0.0f;
+    }
+
     @Override
     protected void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
         String[] str = value.toString().split(",");
-        float delay = Float.parseFloat(String.valueOf(str));
+        float delay = getFloat(str[18]);
         if(delay > 0.0f){
             int AiroportID = Integer.parseInt(str[14]);
             WritableComparabl Key = new WritableComparabl(AiroportID, 1);
