@@ -8,9 +8,9 @@ import org.apache.hadoop.mapreduce.Reducer;
 import java.io.IOException;
 import java.util.Iterator;
 
-public class Reduce extends Reducer<Text, Text,Text, Text> {
-    protected void reduce(Text key, Iterable<IntWritable> values, Context context) throws IOException, InterruptedException {
-        Iterator<IntWritable> iter = values.iterator();
+public class Reduce extends Reducer<WritableComparabl, Text,Text, Text> {
+    protected void reduce(WritableComparabl key, Iterable<Text> values, Context context) throws IOException, InterruptedException {
+        Iterator<Text> iter = values.iterator();
         Text AiroportTitle = new Text("Title: " + iter.next().toString());
         float min = 0.0f, max = 0.0f, sum = 0.0f;
         while(iter.hasNext()){
