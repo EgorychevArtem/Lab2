@@ -5,14 +5,15 @@ import org.apache.hadoop.mapreduce.Mapper;
 
 import java.io.IOException;
 
-public class AiroportMap extends Mapper <LongWritable, Text,WritableComparable, Text> {
+public class AiroportMap extends Mapper <LongWritable, Text,WritableComparabl, Text> {
     @Override
     protected void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
         String str[] = value.toString().split("\", ");
-        Text AiroportTitle = new Text(str[0].replaceAll("\"", ""));
+
+        Text AiroportTitle = new Text(str[1].replaceAll("\"", ""));
         int AiroportID = Integer.parseInt(str[0].replaceAll("\"", ""));
 
-        WritableComparable Key = new WritableComparable(AiroportID, 0);
+        WritableComparabl Key = new WritableComparabl(AiroportID, 0);
         context.write(Key,AiroportTitle);
     }
 }

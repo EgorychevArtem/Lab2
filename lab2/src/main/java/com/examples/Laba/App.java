@@ -15,7 +15,7 @@ public class App {
         if (args.length != 3) {
             System.err.println("Usage: SortApp <input path flight> <input path airport> <output path>");
             System.exit(-1);
-
+        }
             Job job = Job.getInstance();
             job.setJarByClass(App.class);
             job.setJobName("JoinJob sort");
@@ -27,7 +27,7 @@ public class App {
             job.setPartitionerClass(Partition.class);
             job.setGroupingComparatorClass(Comparator.class);
 
-            job.setMapOutputKeyClass(WritableComparable.class);
+            job.setMapOutputKeyClass(WritableComparabl.class);
             job.setMapOutputValueClass(Text.class);
             job.setOutputKeyClass(Text.class);
             job.setOutputValueClass(Text.class);
@@ -36,4 +36,3 @@ public class App {
             System.exit(job.waitForCompletion(true) ? 0 : 1);
         }
     }
-}

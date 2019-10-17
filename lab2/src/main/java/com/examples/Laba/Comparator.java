@@ -9,8 +9,8 @@ public class Comparator extends WritableComparator {
     }
 
     public int compare(WritableComparable first, WritableComparable second){
-        com.examples.Laba.WritableComparable f =(com.examples.Laba.WritableComparable) first;
-        com.examples.Laba.WritableComparable s =(com.examples.Laba.WritableComparable) second;
-        return f.compareAiroport(s);
+        WritableComparabl f =(WritableComparabl) first;
+        WritableComparable s =(WritableComparabl) second;
+        return f.compareAiroport((WritableComparabl) s);
     }
 }
