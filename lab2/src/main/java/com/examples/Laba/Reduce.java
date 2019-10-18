@@ -13,16 +13,18 @@ public class Reduce extends Reducer<WritableComparabl, Text,Text, Text> {
         Iterator<Text> iter = values.iterator();
         Text AiroportTitle = new Text("Title: " + iter.next().toString());
         if (iter.hasNext()) {
+            int i = 0;
             float current, min = 0.0f, max = 0.0f, sum = 0.0f;
             while (iter.hasNext()) {
                 current = Float.parseFloat(iter.next().toString());
-                if (current < min) {
+                if (current < min || i==0)
                     min = current;
-                } else if (current > max) {
+                else if (current > max)
                     max = current;
-                }
                 sum += current;
+                i++;
             }
+            sum /= i;
             Text Result = new Text("min: " + Float.toString(min) + "max: " + Float.toString(max) + "sum: " + Float.toString(sum));
             context.write(AiroportTitle, Result);
         }
