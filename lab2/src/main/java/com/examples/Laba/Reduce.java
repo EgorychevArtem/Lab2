@@ -25,7 +25,7 @@ public class Reduce extends Reducer<WritableComparabl, Text,Text, Text> {
                 i++;
             }
             sum /= i;
-            Text Result = new Text("min: " + Float.toString(min) + "max: " + Float.toString(max) + "sum: " + Float.toString(sum));
+            Text Result = new Text("min: " + Float.toString(min) + ", max: " + Float.toString(max) + ", sum: " + Float.toString(sum));
             context.write(AiroportTitle, Result);
         }
     }
