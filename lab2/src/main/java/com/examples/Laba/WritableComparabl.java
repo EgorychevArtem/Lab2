@@ -16,23 +16,14 @@ public class WritableComparabl implements WritableComparable {
     public WritableComparabl() {
     }
 
-    public void read(DataInput d) throws IOException {
-        AiroportID = d.readInt();
-        flag = d.readInt();
-    }
-
     public int compareAiroport(WritableComparabl AiroportID){
         WritableComparabl second = AiroportID;
         if (this.AiroportID > second.AiroportID){
             return 1;
-        } else {
-            return 0;
+        } else if (this.AiroportID < second.AiroportID){
+            return -1;
         }
-    }
-
-    public String PrintResult(){
-        String str = "AiroportID: " + AiroportID + "flag: " + flag;
-        return str;
+        return 0;
     }
 
     @Override
@@ -43,6 +34,10 @@ public class WritableComparabl implements WritableComparable {
         } else if (this.AiroportID < a.AiroportID) {
             return -1;
         }
+        if (this.flag > a.flag)
+            return 1;
+        else if (this.flag < a.flag)
+            return -1;
         return 0;
     }
 

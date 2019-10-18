@@ -10,7 +10,8 @@ public class Comparator extends WritableComparator {
 
     public int compare(WritableComparable first, WritableComparable second){
         WritableComparabl f =(WritableComparabl) first;
-        WritableComparable s =(WritableComparabl) second;
-        return f.compareAiroport((WritableComparabl) s);
+        WritableComparabl s =(WritableComparabl) second;
+        return f.compareAiroport(s);
     }
 }
+
