@@ -13,6 +13,8 @@ public class WritableComparabl implements WritableComparable {
         this.flag = flag;
     }
 
+    public WritableComparabl() {}
+
     public int compareAiroport(WritableComparabl AiroportID){
         WritableComparabl second = AiroportID;
         if (this.AiroportID > second.AiroportID){
