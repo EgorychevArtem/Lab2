@@ -19,8 +19,8 @@ public class App {
             Job job = Job.getInstance();
             job.setJarByClass(App.class);
             job.setJobName("JoinJob sort");
-            MultipleInputs.addInputPath(job, new Path(args[0]), TextInputFormat.class, FlightMap.class);
-            MultipleInputs.addInputPath(job, new Path(args[1]), TextInputFormat.class, AiroportMap.class);
+            MultipleInputs.addInputPath(job, new Path(args[0]), TextInputFormat.class, FlightMapper.class);
+            MultipleInputs.addInputPath(job, new Path(args[1]), TextInputFormat.class, AiroportMapper.class);
             FileOutputFormat.setOutputPath(job, new Path(args[2]));
 
             job.setReducerClass(Reduce.class);
